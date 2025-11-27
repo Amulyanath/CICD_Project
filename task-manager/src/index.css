@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(120deg, #1a202c, #516395, #043957 85%);
+  color: #f4f4f6;
+  min-height: 100vh;
+}
+
+/* Containers */
+.auth-container, .task-container {
+  max-width: 520px;
+  margin: 4rem auto;
+  padding: 2.25rem;
+  background: linear-gradient(120deg, #21243d 60%, #115173 100%);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(30, 64, 175, 0.25);
+  color: #f9fafb;
+  transition: box-shadow 0.35s cubic-bezier(0.4,0,0.2,1), transform 0.25s ease;
+}
+
+.auth-container:hover, .task-container:hover {
+  transform: scale(1.01);
+  box-shadow: 0 18px 44px rgba(83, 92, 145, 0.6);
+}
+
+.auth-container h2, .task-container h2 {
+  text-align: center;
+  margin-bottom: 1.3rem;
+  color: #70a1ff;
+}
+
+/* Inputs & Select */
+input, select {
+  width: 100%;
+  padding: 0.85rem;
+  margin-bottom: 1.1rem;
+  border: 1px solid #395173;
+  border-radius: 10px;
+  font-size: 1.07rem;
+  background: #22344a;
+  color: #e6e7ec;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+input:focus, select:focus {
+  border: 1px solid #70a1ff;
+  box-shadow: 0 0 10px #70a1ff4d;
+  outline: none;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(120deg, #30cfd0, #330867);
+  color: #fafafa;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.07rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.32s, box-shadow 0.32s, transform 0.25s;
+}
+
+button:hover {
+  background: linear-gradient(120deg, #330867, #30cfd0);
+  box-shadow: 0 2px 16px rgba(48, 207, 208, 0.4);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Task Input Layout */
+.task-input {
+  display: flex;
+  align-items: stretch;
+  gap: 0.7rem;
+  margin-bottom: 1.1rem;
+}
+
+/* All controls same height */
+.task-input input[type="checkbox"],
+.task-input select,
+.task-input button {
+  height: 47px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Checkbox styling */
+.task-input input[type="checkbox"] {
+  width: 47px;
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: #30cfd0;
+}
+
+/* Select styling */
+.task-input select {
+  flex: 0 0 95px;
+  background: #23394d;
+  color: #e6e7ec;
+  border: 1px solid #395173;
+  font-size: 1.02rem;
+  line-height: 1.05;
+  cursor: pointer;
+  padding: 0;
+  text-align: center;
+}
+
+/* Button expands */
+.task-input button {
+  flex: 1;
+  background: linear-gradient(120deg, #30cfd0, #330867);
+  color: #fafafa;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.task-input button:hover {
+  background: linear-gradient(120deg, #330867, #30cfd0);
+  transform: scale(1.04);
+}
+/* Inputs, Selects & Textareas */
+input, select, textarea {
+  width: 100%;
+  padding: 0.85rem;
+  margin-bottom: 1.1rem;
+  border: 1px solid #395173;
+  border-radius: 10px;
+  font-size: 1.07rem;
+  background: #22344a; /* dark background to match theme */
+  color: #e6e7ec;
+  transition: border 0.3s, box-shadow 0.3s;
+  min-height: 47px; /* make all boxes same default height */
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none; /* user cannot manually resize */
+  overflow-y: auto; /* scroll if content exceeds box */
+}
+
+input:focus, select:focus, textarea:focus {
+  border: 1px solid #70a1ff;
+  box-shadow: 0 0 10px #70a1ff4d;
+  outline: none;
+}
