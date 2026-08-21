@@ -7,11 +7,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/tasks")
-@CrossOrigin(origins = "http://localhost:5173") // ✅ allow frontend calls
+@CrossOrigin(origins = "http://localhost:5173")
 public class TaskController {
 
     private final TaskService taskService;
-    public TaskController(TaskService taskService) { this.taskService = taskService; }
+
+    public TaskController(TaskService taskService) {
+        this.taskService = taskService;
+    }
 
     @GetMapping
     public List<Task> getTasks() {
@@ -26,5 +29,10 @@ public class TaskController {
     @PutMapping("/{id}/toggle")
     public Task toggleTask(@PathVariable Long id) {
         return taskService.toggleTask(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteTask(@PathVariable Long id) {
+        taskService.deleteTask(id);
     }
 }
