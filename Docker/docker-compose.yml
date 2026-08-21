@@ -40,6 +40,8 @@ services:
     build:
       context: ..
       dockerfile: Docker/Dockerfile.frontend
+      args:
+        VITE_API_URL: /api
     container_name: task-frontend
     restart: unless-stopped
     ports:
