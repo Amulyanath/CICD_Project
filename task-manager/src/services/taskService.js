@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8081/api/tasks";
+// Local Spring Boot runs on 8082; Docker Compose exposes the backend on host port 8081.
+const API_URL = `${import.meta.env.VITE_API_URL || "http://localhost:8082"}/api/tasks`;
 
 // Get all tasks
 export const getTasks = async () => {
@@ -20,7 +21,7 @@ export const toggleTaskCompletion = async (id) => {
   return response.data;
 };
 
-// ✅ Delete a task
+// Delete a task
 export const deleteTask = async (id) => {
   const response = await axios.delete(`${API_URL}/${id}`);
   return response.data;
